@@ -1,25 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const fakeTasks = ['Eat Dinner', 'Do Laundry', 'Go to the gym', ]
+    return (
+      <>
+        <h2>TODO LIST APP</h2>
+        <input type='text' style={{ outline: 'none'}}/>
+        <button> Add Task </button>
+        {fakeTasks.map(task =>(
+          <h2>{task}</h2>
+        ))}
+      </>
+    )
 }
 
 export default App;
