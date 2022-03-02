@@ -5,11 +5,15 @@ function App() {
   const fakeTasks = ['Eat Dinner', 'Do Laundry', 'Go to the gym', ]
 
   const [tasks, setTasks] = useState([])
-  const [task, setTask] = useState('')
+  const [task, setTask] = useState('') //setTask is the function that allows you to set the variable 
 
   const addTaskHandler = () => {
     console.log('clicked add task button')
     console.log(task)
+    setTasks([task, ...tasks]) // "..."  means to append? "..." = make a new array and put the new task inside of it. the three dots removes the previous array brakets so that you can add the new task
+    
+
+    console.log(tasks)
   }
 
     return (
@@ -23,7 +27,7 @@ function App() {
         />
         <button onClick = {addTaskHandler}> Add Task </button>
         {tasks.map(task =>(
-          <h2>{task}</h2>
+          <p>•{task}</p>
         ))}
       </>
     )
